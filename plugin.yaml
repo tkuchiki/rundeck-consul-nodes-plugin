@@ -1,0 +1,13 @@
+name: consul-nodes
+version: 0.1.0
+rundeckPluginVersion: 1.2
+author: tkuchiki
+date: 2017-06-30T18:02:00
+url: https://github.com/tkuchiki/rundeck-consul-nodes-plugin
+providers:
+  - name: consul-nodes
+    service: ResourceModelSource
+    plugin-type: script
+    script-interpreter: bash -c
+    script-file: consul_nodes.sh
+    resource-format: resourceyaml
