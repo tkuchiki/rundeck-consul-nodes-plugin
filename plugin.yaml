@@ -1,8 +1,8 @@
 name: consul-nodes
-version: 0.1.0
+version: 0.1.1
 rundeckPluginVersion: 1.2
 author: tkuchiki
-date: 2017-06-30T18:02:00
+date: 2017-03-07T16:55:23
 url: https://github.com/tkuchiki/rundeck-consul-nodes-plugin
 providers:
   - name: consul-nodes
@@ -11,3 +11,26 @@ providers:
     script-interpreter: bash -c
     script-file: consul_nodes.sh
     resource-format: resourceyaml
+    config:
+      - name: "service"
+        title: Service
+        type: Select
+        values: "consul,serf"
+        required: false
+        description: "consul or serf"
+      - name: "target-statuses"
+        tile: Target statuses
+        type: String
+        required: false
+        description: "Target consul/serf statuses(| separated)"
+        default: "alive"
+      - name: "exclude-nodes"
+        title: Exclude nodes
+        type: String
+        description: "Exclude nodes(grep extended regexp)"
+        required: false
+      - name: "include-nodes"
+        title: Include nodes
+        type: String
+        description: "Include nodes(grep extended regexp)"
+        required: false
