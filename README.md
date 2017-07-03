@@ -1,6 +1,6 @@
 # rundeck-consul-nodes-plugin
 
-Get resource node data from Consul members
+Get resource node data from Consul/Serf members
 
 ## Installation
 
@@ -9,8 +9,12 @@ Get resource node data from Consul members
 
 ## Configuration
 
-Edit `/var/rundeck/projects/YOUR_PROJECT/etc/project.properties` or "Edit Configuration File".
+Edit `/var/rundeck/projects/YOUR_PROJECT/etc/project.properties` or "Simple Configuration", "Edit Configuration File".
 
 ```
 resources.source.[index].type=consul-nodes
+resources.source.[index].service=consul # consul or serf (default: consul)
+resources.source.[index].target-statuses=alive|left # regexp for status (default: alive)
+resources.source.[index].exclude-nodes="nodename1" # exclude nodes(grep extended regexp)
+resources.source.[index].include-nodes="nodename2" # include nodes(grep extended regexp)
 ```
