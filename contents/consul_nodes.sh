@@ -22,7 +22,7 @@ fi
 
 TMP_IFS=${IFS}
 IFS=$'\n'
-for line in $(${SERVICE} members -status=${STATUSES} ${GREP} | awk 'NR > 1 { print $1, $2 }' | awk -F ':' '{ print $1 }'); do
+for line in $(bash -c "${SERVICE} members -status=${STATUSES} ${GREP} | awk '\$1 != \"Node\" && \$2 != \"Address\" { print \$1, \$2 }' | awk -F ':' '{ print \$1 }'"); do
     IFS=${TMP_IFS}
     set -- $line
     nodename="${1}"
