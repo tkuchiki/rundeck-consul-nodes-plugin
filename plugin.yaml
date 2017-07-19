@@ -1,8 +1,8 @@
 name: consul-nodes
-version: 0.1.3
+version: 0.1.2
 rundeckPluginVersion: 1.2
 author: tkuchiki
-date: 2017-07-19T10:45:32
+date: 2017-07-19T10:49:20
 url: https://github.com/tkuchiki/rundeck-consul-nodes-plugin
 providers:
   - name: consul-nodes
